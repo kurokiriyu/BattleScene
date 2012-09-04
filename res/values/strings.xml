@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">戦闘シーン</string>
+    <string name="hero_name">主人公</string>
+    <string name="hero_hp">HP:100</string>
+    <string name="hero_mp">MP:  0</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">BattleScene</string>
+
+</resources>
