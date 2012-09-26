@@ -8,30 +8,37 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
-	// アプリ『BattleScene』を起動したときのスタート画面。
-	// つまり、activity_main.xmlを表した状態。
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
     
-    // actiity_main.xml内のandroid:onClick="button1Click"の詳細
     public void button1Click(View view){
-    	
-    	// activity_test2.xmlファイルに書いたtextView4に、
-        // R.id.textView4という名前がつけられている。
-        // それを「findViewById()」というメソッドを使って取り出し、
-        // プログラムで使えるようにする。
     	TextView textView = (TextView)findViewById(R.id.textView4);
-		
-		// そこへテキストを貼り付ける。
-		textView.setText("敵Aに攻撃した！");
+		textView.setText("敵を選んでください。");
     }
+    
+	public void buttonEClick(View view){
+		TextView textView = (TextView)findViewById(R.id.textView4);
+//		ImageView View = (ImageView)findViewById(R.id.imageView1);
+		switch (view.getId()) {
+		case R.id.imageView1:
+//			imageView.setView(R.drawable.enemy_a_2);
+			textView.setText("敵Aを攻撃した！\n" + "敵Aに" + 10 + "のダメージ！");
+			break;
+		case R.id.imageView2:
+			textView.setText("敵Bを攻撃した！\n" +	"敵Bに" + 10 + "のダメージ！");
+			break;
+		default:
+			textView.setText("敵を選んでください。");
+			}
+		}
     
     public void button2Click(View view){
     	TextView textView = (TextView)findViewById(R.id.textView4);
